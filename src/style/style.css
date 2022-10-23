@@ -1,0 +1,455 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap");
+
+/* Resets */
+body,
+header,
+h1,
+h2,
+h3,
+main,
+section,
+ul,
+li,
+button,
+div,
+input,
+span,
+strong {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+strong {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* PC, 모바일용으로 사용된 이미지 내에서 의미있는 텍스트의 대체텍스트를 제공할 떄 */
+.ir {
+  display: block;
+  overflow: hidden;
+  font-size: 1px;
+  line-height: 0;
+  text-indent: -9999px;
+  color: transparent;
+}
+
+/* Componenets */
+body {
+  background-color: #eae8fe;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+}
+
+.tit-header {
+  margin-bottom: 67px;
+}
+
+.tit-header .tit-img {
+  max-width: 386px;
+  height: 180px;
+  margin: 0 auto;
+  background-image: url("../img/logo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Commons */
+/* 거스름돈 반환 & 입금 & 획득 버튼 */
+.btn-balance,
+.btn-credit,
+.btn-get {
+  width: 94px;
+  padding: 6px 9px;
+  border: none;
+  background: #ffffff;
+  box-shadow: 0 0 3px rgb(0 0 0 / 50%);
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 13px;
+  line-height: 19px;
+  color: #000;
+  border-radius: 5px;
+  margin-left: 12px;
+  cursor: pointer;
+}
+
+/* Content */
+.cont-main {
+  display: flex;
+  justify-content: center;
+}
+
+/* Vending-machine Section */
+.cont-main .vending-machine {
+  position: relative;
+  padding: 30px 27px;
+  margin-right: 28px; /* 자판기 화면과 나의 정보 화면 간격 */
+  background-color: #fff;
+}
+
+.cont-main .vending-machine .btn-left,
+.cont-main .vending-machine .btn-right {
+  position: absolute;
+  top: 28.5%;
+  left: 5px;
+  font-size: 14px;
+  border: none;
+  padding: 5px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.cont-main .vending-machine .btn-right {
+  left: unset;
+  right: 5px;
+}
+
+/* 음료수 목록 */
+.vending-machine .cont-lists {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.cont-lists li .btn-item.sold-out {
+  pointer-events: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.cont-lists li .btn-item.sold-out::after {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.cont-lists li .btn-item.sold-out .img-soldOut {
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.cont-lists li .btn-item {
+  width: 100%;
+  padding: 8.5px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px rgb(0 0 0 / 50%);
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.vending-machine .cont-lists .btn-item:hover {
+  box-shadow: 0px 0px 0px 3px #6327fe;
+}
+
+.cont-lists .btn-item .img-item {
+  width: 36px;
+  height: 65px;
+  margin-bottom: 6px;
+}
+
+.cont-lists .btn-item .txt-name {
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 13px;
+  margin-bottom: 7px;
+}
+
+.cont-lists .btn-item .txt-price {
+  width: 70px;
+  padding: 5px 15px;
+  font-size: 12px;
+  line-height: 100%;
+  color: #fff;
+  background-color: #6327fe;
+  border-radius: 50px;
+}
+
+.cont-lists .btn-item .txt-price::after {
+  content: "원";
+}
+
+/* 잔액 & 거스름돈 */
+.vending-machine .cont-balance,
+.vending-machine .cont-credit {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 11px;
+}
+
+.vending-machine .cont-balance .info-balance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  height: 33px;
+  background-color: #eae8fe;
+  padding: 6px 10px;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 5px;
+}
+
+.cont-balance .info-balance .txt-balance::after {
+  content: " 원";
+}
+
+/* 입금 */
+.vending-machine .cont-credit .inp-credit {
+  flex-grow: 1;
+  height: 33px;
+  padding: 5px;
+  background-color: #fff;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.vending-machine .cont-credit .inp-credit::placeholder {
+  color: #bdbdbd;
+}
+
+/* 카트 */
+.vending-machine .cont-cart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.vending-machine .cont-cart .list-cart {
+  width: 200px; /* flex-grow로 늘리고 싶지만 오른쪽 수량이 absolute라 겹쳐진다 */
+  height: 106px;
+  background-color: #eae8fe;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  overflow: auto;
+  padding: 12px 18px 12px 12px;
+}
+
+.cont-cart .list-cart li .btn-cart {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 46px;
+  background-color: #fff;
+  border: 1px solid #bdbdbd;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+}
+
+.cont-cart .list-cart li + li {
+  margin-top: 6px;
+}
+
+.list-cart li .btn-cart > img {
+  width: 18px;
+  height: 33px;
+  margin: 0 10px;
+}
+
+.list-cart li .btn-cart .txt-cartName {
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 13px;
+  color: #333;
+}
+
+.list-cart li .btn-cart .txt-cartPrice {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  transform: translateY(-50%);
+  padding: 4px 11px 6px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+}
+
+/* 획득 버튼 */
+.vending-machine .cont-cart .btn-get {
+  height: 106px;
+  background-color: #6327fe;
+  color: #fff;
+}
+
+/* My-info Section */
+.my-info .cont-mymoney {
+  background-color: #fff;
+  padding: 9px 27px;
+  margin-bottom: 20px;
+}
+
+/* 소지금 */
+.my-info .cont-mymoney .btn-mymoney {
+  width: 306px;
+  background-color: #eae8fe;
+  padding: 6px 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.cont-mymoney .btn-mymoney .txt-mymoney::after {
+  content: " 원";
+}
+
+.my-info .cont-myBeverage {
+  background-color: #fff;
+  text-align: center;
+  padding: 25px 27px 31px;
+}
+
+/* 횓득한 음료 제목 */
+.my-info .cont-myBeverage .tit-myCola {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 13px;
+}
+
+/* 내 음료 목록 */
+.my-info .cont-myBeverage .cont-myColaList {
+  height: 364px;
+  padding: 12px 18px 12px 12px;
+  background-color: #eae8fe;
+  border-radius: 5px;
+  border: 1px solid #bdbdbd;
+  margin-bottom: 6px;
+  overflow: auto;
+}
+
+.cont-myBeverage .cont-myColaList .item-myCola {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 6px 10px 7px;
+  position: relative;
+  border-radius: 5px;
+}
+
+.cont-myBeverage .cont-myColaList .item-myCola + .item-myCola {
+  margin-top: 12px;
+}
+
+.cont-myColaList .item-myCola .img-myCola {
+  width: 18px;
+  height: 33px;
+  margin-right: 10px;
+}
+
+.cont-myColaList .item-myCola .txt-myColaName {
+  font-size: 9px;
+  line-height: 13px;
+  color: #333;
+  font-weight: 500;
+}
+
+.cont-myColaList .item-myCola .txt-myColaQuantity {
+  padding: 4px 11px 6px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+}
+
+/* 내가 산 음료가격 */
+.my-info .cont-myBeverage .cont-totalPrice {
+  text-align: right;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    background-color: #fff;
+  }
+
+  .tit-header {
+    margin-bottom: 18px;
+  }
+
+  .tit-header .tit-img {
+    width: calc(166px * 2);
+    height: calc(71px * 2);
+  }
+
+  .cont-main {
+    margin: 0 60px;
+    flex-direction: column;
+  }
+
+  .cont-main .vending-machine {
+    margin-right: 0;
+  }
+
+  .vending-machine .cont-cart .list-cart {
+    flex-grow: 1;
+  }
+
+  .my-info .cont-mymoney .btn-mymoney {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cont-main {
+    margin: 0 20px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .tit-header .tit-img {
+    width: 166px;
+    height: 71px;
+  }
+
+  .cont-main .vending-machine {
+    padding: 0 27px;
+    margin-bottom: 11px;
+  }
+
+  .cont-main {
+    margin: 0;
+  }
+
+  .cont-lists .btn-item .img-item {
+    width: 36px;
+    height: 65px;
+  }
+
+  .my-info .cont-myBeverage {
+    padding: 11px 27px 43px;
+  }
+}

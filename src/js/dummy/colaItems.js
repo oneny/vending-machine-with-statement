@@ -7,7 +7,7 @@ export default [
     source: "./src/img/beverageImg/Original_Cola.png",
   },
   {
-    id: "o012kd8d",
+    id: "bcds3294",
     name: "Violet_Cola",
     price: 1000,
     quantity: 0,

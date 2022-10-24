@@ -20,7 +20,7 @@ export const observable = (obj) => {
         // 숫자, 문자열, null, undefined 등의 원시 타입 상태가 같은 경우 방지
         if (_value === value) return;
         // // 객체, 배열 똑같은 상태인 경우 방지
-        if (JSON.stringify(_value) === JSON.stringify(value)) return;
+        // if (JSON.stringify(_value) === JSON.stringify(value)) return;
 
         // 상태 바뀌면 저장 후 observers에 저장된 함수 실행
         _value = value;

@@ -27,7 +27,6 @@ export default class ColaItems extends Component {
   setEvent() {
     const { $el } = this;
     const { colaItems, cartItems } = store.getState();
-    console.log(store.getState());
 
     $el.querySelectorAll(".btn-item").forEach((item) => {
       item.addEventListener("click", ({ target }) => {

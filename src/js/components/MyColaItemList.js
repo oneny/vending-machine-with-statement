@@ -1,5 +1,5 @@
 import Component from "../core/Component.js";
-import { store } from "../store.js"
+import { store } from "../store.js";
 
 export default class MyColaItemList extends Component {
   template() {
@@ -14,9 +14,5 @@ export default class MyColaItemList extends Component {
         </li>
       `).join("")}
     `;
-  }
-
-  setEvent() {
-
   }
 }

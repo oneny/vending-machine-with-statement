@@ -8,7 +8,7 @@ const initState = {
   colaItems,
   cartItems,
   myColaItems,
-  myOwnMoney: 0, // 소지금
+  myOwnMoney: 25000, // 소지금
   myBalance: 0, // 잔액
   currentPage: 0,
 };
@@ -20,6 +20,8 @@ export const ADD_CART = "ADD_CART";
 export const UPDATE_CART = "UPDATE_CART";
 export const REDUCE_CART = "REDUCE_CART";
 export const REMOVE_CART = "REMOVE_CART";
+
+export const DEPOSIT_MONEY = "DEPOSIT_MONEY";
 
 export const store = createStore((state = initState, action = {}) => {
   switch (action.type) {
@@ -64,6 +66,11 @@ export const store = createStore((state = initState, action = {}) => {
         ...state,
         cartItems: state.cartItems.filter(({ colaId }) => colaId !== action.payload),
       };
+    case DEPOSIT_MONEY:
+      return {
+        ...state,
+        myOwnMoney: action.payload,
+      }
     default:
       return initState;
   }

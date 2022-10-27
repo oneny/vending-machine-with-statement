@@ -29,13 +29,13 @@ export const store = createStore((state = initState, action = {}) => {
       return {
         ...state,
         colaItems: state.colaItems.map((item) =>
-          item.id === action.payload ? { ...item, quantity: ++item.quantity } : item),
+          item.id === action.payload ? { ...item, quantity: item.quantity + 1 } : item),
       }
     case REDUCE_COLA:
       return {
         ...state,
         colaItems: state.colaItems.map((item) =>
-          item.id === action.payload ? { ...item, quantity: --item.quantity } : item),
+          item.id === action.payload ? { ...item, quantity: item.quantity - 1 } : item),
       }
     case ADD_CART:
       const { id: colaId, name, price, source } = action.payload;
@@ -50,16 +50,14 @@ export const store = createStore((state = initState, action = {}) => {
       return {
         ...state,
         cartItems: state.cartItems.map((item) =>
-          item.colaId === action.payload
-            ? { ...item, quantity: ++item.quantity }
-            : item
+          item.colaId === action.payload ? { ...item, quantity: item.quantity + 1 } : item
         ),
       };
     case REDUCE_CART:
       return {
         ...state,
         cartItems: state.cartItems.map(item =>
-          item.colaId === action.payload ? { ...item, quantity: --item.quantity } : item)
+          item.colaId === action.payload ? { ...item, quantity: item.quantity - 1 } : item)
       }
     case REMOVE_CART:
       return {

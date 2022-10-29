@@ -10,7 +10,6 @@ const initState = {
   myColaItems,
   myOwnMoney: 25000, // 소지금
   myBalance: 0, // 잔액
-  currentPage: 0,
 };
 
 export const REDUCE_COLA = "REDUCE_COLA";
@@ -22,6 +21,7 @@ export const REDUCE_CART = "REDUCE_CART";
 export const REMOVE_CART = "REMOVE_CART";
 
 export const DEPOSIT_MONEY = "DEPOSIT_MONEY";
+export const CREDIT_MONEY = "CREDIT_MONEY";
 
 export const store = createStore((state = initState, action = {}) => {
   switch (action.type) {
@@ -68,6 +68,12 @@ export const store = createStore((state = initState, action = {}) => {
       return {
         ...state,
         myOwnMoney: action.payload,
+      }
+    case CREDIT_MONEY:
+      return {
+        ...state,
+        myOwnMoney: state.myOwnMoney - action.payload,
+        myBalance: state.myBalance + action.payload,
       }
     default:
       return initState;

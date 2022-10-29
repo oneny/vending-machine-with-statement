@@ -17,7 +17,6 @@ export const observable = (obj) => {
         return _value;
       },
       set(value) {
-        console.log(_value);
         // 숫자, 문자열, null, undefined 등의 원시 타입 상태가 같은 경우 방지
         if (_value === value) return;
         // 객체, 배열 똑같은 상태인 경우 방지

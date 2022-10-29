@@ -15,8 +15,8 @@ export default class CreditForm extends Component {
     const { $el } = this;
     const { myOwnMoney, myBalance } = store.getState();
     const $inpCreditEl = $el.querySelector(".inp-credit");
-    
-    $el.querySelector(".btn-credit").addEventListener("click", () => {
+
+    const credit = () => {
       let inpMoney = $inpCreditEl.value;
 
       // 입금액을 입력하지 않았거나 숫자가 아닌 문자가 들어간 경우
@@ -31,6 +31,11 @@ export default class CreditForm extends Component {
       }
 
       store.dispatch({ type: CREDIT_MONEY, payload: parseInt(inpMoney) });
-    });
+    };
+    
+    $el.querySelector(".btn-credit").addEventListener("click", credit);
+    $el.querySelector(".inp-credit").addEventListener("keyup", (e) => {
+      if (e.keyCode === 13) credit();
+    })
   }
 }

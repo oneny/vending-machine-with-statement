@@ -4,6 +4,7 @@ import MyColaItemList from "./components/MyColaItemList.js";
 import MyMoneyBtn from "./components/MyMoneyBtn.js";
 import DepositForm from "./components/CreditForm.js";
 import BalanceForm from "./components/BalanceForm.js";
+import BuyButton from "./components/BuyButton.js";
 
 const $contList = document.querySelector(".cont-lists");
 const $cartList = document.querySelector(".list-cart");
@@ -11,6 +12,7 @@ const $contMyColaList = document.querySelector(".cont-myColaList");
 const $contMyMoney = document.querySelector(".cont-mymoney");
 const $contCredit = document.querySelector(".cont-credit");
 const $contBalance = document.querySelector(".cont-balance");
+const $wrapButton = document.querySelector(".wrap-btn");
 
 new ColaItems($contList);
 new CartList($cartList);
@@ -18,3 +20,4 @@ new MyColaItemList($contMyColaList);
 new MyMoneyBtn($contMyMoney);
 new DepositForm($contCredit);
 new BalanceForm($contBalance);
+new BuyButton($wrapButton);

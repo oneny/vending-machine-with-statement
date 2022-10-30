@@ -4,6 +4,7 @@ import { store } from "../store.js";
 export default class MyColaItemList extends Component {
   template() {
     const { myColaItems } = store.getState();
+    console.log(myColaItems);
 
     return `
       ${myColaItems.map(({ source, name, quantity }) => `

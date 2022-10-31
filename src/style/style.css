@@ -96,23 +96,6 @@ body {
   background-color: #fff;
 }
 
-.cont-main .vending-machine .btn-left,
-.cont-main .vending-machine .btn-right {
-  position: absolute;
-  top: 28.5%;
-  left: 5px;
-  font-size: 14px;
-  border: none;
-  padding: 5px;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.cont-main .vending-machine .btn-right {
-  left: unset;
-  right: 5px;
-}
-
 /* 음료수 목록 */
 .vending-machine .cont-lists {
   display: grid;

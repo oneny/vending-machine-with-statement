@@ -2,8 +2,6 @@
 
 > [데모 사이트](https://oneny.github.io/vending-machine-with-statement/)
 
-## 이전 프로젝트 및 공부 TIL
-
 ## 기능 구현
 
 <details>
@@ -352,8 +350,8 @@ export default class ColaItems extends Component {
   - Webpack에 대해서 공부하고, 사용할 곳을 찾아보다 JS파일이 많아져 좀 느려진 벤딩머신 토이 프로젝트에 적용해보면 좋을 것 같다는 생각이 들었다.
   - Webpack에서 특별하게 사용한 것은 없고, 정말 모듈 번들링을 통해 요청 개수만 줄여도 페이지가 좀 더 빠르게 렌더링하는지 보기 위해서 적용해봤다.
 
-  <img src="./src/img/웹팩전2.png" />
-  <img src="./src/img/웹팩후.png" />
+    <img src="./src/img/웹팩전.png" />
+    <img src="./src/img/웹팩후.png" />
 
 </details>
 
